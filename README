@@ -1,0 +1,49 @@
+# Solutions excercise by Alex Merino
+# Date: 17-06-2024
+
+# ReCaptcha Solver API
+
+Esta API permite resolver ReCaptcha v2 y v3 y obtener el contenido protegido por ReCaptcha.
+
+## Instalación
+
+1. Clonar el repositorio.
+2. Instalar las dependencias:
+    ```bash
+    pip install -r requirements.txt
+    playwright install
+    ```
+
+## Ejecución
+
+Para ejecutar la aplicación en modo de desarrollo:
+```bash
+uvicorn app.main:app --reload
+```
+
+## Configuración
+
+### Variables de Entorno
+
+Asegúrate de configurar tus variables de entorno en un archivo `.env` en la raíz del proyecto:
+
+### Construcción y Ejecución con Docker
+
+Sigue estos pasos para construir y ejecutar el contenedor Docker de la aplicación.
+
+#### Paso 1: Construir la Imagen Docker
+
+Ejecuta el siguiente comando para construir la imagen Docker:
+
+```bash
+docker build -t recaptcha-solver-api .
+```
+
+```bash
+docker run -p 8000:8000 --env-file .env recaptcha-solver-api
+```
+
+#### Paso 2: Hacer pruebas con la siguiente url para recaptcha 2
+
+https://recaptcha-demo.appspot.com/recaptcha-v2-checkbox.php
+https://www.google.com/recaptcha/api2/demo
